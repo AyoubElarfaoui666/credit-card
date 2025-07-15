@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 20px;
+}
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    perspective: 1000px;
+}
+.card{
+    width: 600px;
+    height: 370px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transition: 3s;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.card > div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #242a31;
+    padding: 30px;
+    backface-visibility: hidden;
+}
+.front p:first-child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.front p:first-child span:last-child{
+    font-weight: 600;
+}
+.front .chip{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+.front .chip i{
+    font-size: 30px !important;
+    transform: rotate(90deg);
+}
+.front .num{
+    font-size: 25px ;
+    letter-spacing: 5px;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+}
+.front .num + p{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 20px;
+}
+.front .num + p span{
+    font-size: 16px;
+    font-weight: 500;
+}
+.front .div{
+    display: flex;
+    justify-content: space-between;
+}
+.front .div img{
+    width: 100px;
+}
+.front .div p{
+    text-transform: uppercase;
+}
+
+.back{
+    display: block;
+    padding: 30px 0px !important;
+    transform: rotateY(-180deg);
+}
+.font{
+    transform: rotateY(0deg);
+}
+.back .black{
+    height: 60px;
+    background-color: black;
+    margin-bottom: 20px;
+}
+.back .content{
+    padding: 0 30px;
+}
+.back .content p:first-of-type{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.back .content .white{
+    height: 45px;
+    background-color: white;
+    width: 80%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.back .content .white:after{
+    content: "900";
+    color: black;
+    background-color: rgb(200, 200, 200);
+    position: absolute;
+    top: 4px;
+    right: -28px;
+    padding: 2px 5px  ;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.container::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: 
+    radial-gradient(circle at 20% 60%, rgba(244, 114, 182, 0.8), rgba(244, 114, 182, 0) 50%),
+    radial-gradient(circle at 80% 30%, rgba(192, 132, 252, 0.7), rgba(192, 132, 252, 0) 50%),
+    radial-gradient(circle at 60% 80%, rgba(253, 224, 71, 0.6), rgba(253, 224, 71, 0) 55%),
+    linear-gradient(to bottom right, rgba(236, 72, 153, 1), rgba(168, 85, 247, 1));
+}
+.container::after{
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    right: -50%;
+    z-index: -1;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: 
+    radial-gradient(circle at 20% 60%, rgba(244, 114, 182, 0.8), rgba(244, 114, 182, 0) 50%),
+    radial-gradient(circle at 80% 30%, rgba(192, 132, 252, 0.7), rgba(192, 132, 252, 0) 50%),
+    radial-gradient(circle at 60% 80%, rgba(253, 224, 71, 0.6), rgba(253, 224, 71, 0) 55%),
+    linear-gradient(to bottom right, rgba(236, 72, 153, 1), rgba(168, 85, 247, 1));
+}
+
+
